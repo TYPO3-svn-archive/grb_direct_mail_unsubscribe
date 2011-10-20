@@ -1,0 +1,43 @@
+plugin.tx_grbdirectmailunsubscribe {
+	settings = 
+	view {
+		templateRootPath 	= {$plugin.tx_grbdirectmailunsubscribe.view.templateRootPath}
+		partialRootPath 	= {$plugin.tx_grbdirectmailunsubscribe.view.partialRootPath}
+		layoutRootPath 		= {$plugin.tx_grbdirectmailunsubscribe.view.layoutRootPath}
+	}
+	persistence.storagePid = 29,98,99,100,101
+}
+
+# -----------------------------------------------------------------------------------------
+# Extbase configuration
+# -----------------------------------------------------------------------------------------
+
+config.tx_extbase {
+    persistence{
+        enableAutomaticCacheClearing = 1
+        updateReferenceIndex = 0
+        classes {
+			Tx_GrbDirectMailUnsubscribe_Domain_Model_FrontendUser {
+        		mapping {
+            		tableName = fe_users
+					columns {
+							# db-field fe_users    	= db-field domain-model
+							# ---------------------------------------------
+                        	usergroup.foreignClass 						= Tx_Extbase_Domain_Model_FrontendUserGroup
+                        	pid.mapOnProperty 							= pid
+                        	module_sys_dmail_newsletter.mapOnProperty 	= newsletter
+                    }
+        		}
+    		}
+            Tx_Extbase_Domain_Model_FrontendUserGroup {
+                mapping {
+                    tableName = fe_groups
+                    columns {
+                        subgroup.foreignClass = Tx_Extbase_Domain_Model_FrontendUserGroup
+                        lockToDomain.mapOnProperty = lockToDomain
+                    }
+                }
+            }
+        }
+    }
+}

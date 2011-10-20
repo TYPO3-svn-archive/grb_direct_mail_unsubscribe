@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the direct_mail unsubscribe extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="show.unsubscribe.title">Newsletter Unsubscribe</label>
+			<label index="show.unsubscribe.done">They were discharged from the newsletter system.</label>
+			<label index="show.unsubscribe.false">There was an error. The discharge from the system could not be completed.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="show.unsubscribe.title">Newsletter Abmeldung</label>
+			<label index="show.unsubscribe.done">Sie wurden erfolgreich aus dem Newsletter-System ausgetragen.</label>
+			<label index="show.unsubscribe.false">Es ist ein Fehler aufgetreten. Die Austragung aus dem System konnte nicht abgeschlossen werden.</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="show.unsubscribe.title">Désabonnement du Newsletter</label>
+			<label index="show.unsubscribe.done">Le Newsletter était désabonné avec succès.</label>
+			<label index="show.unsubscribe.false">Il y avait une erreur. Le rejet du système n'a pas pu être achevé.</label>
+		</languageKey>
+	</data>
+</T3locallang>
